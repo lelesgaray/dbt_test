@@ -1,0 +1,15 @@
+version: 2
+sources:
+- name: "{{ var('DATASET_ID') }}"
+  quoting:
+    database: true
+    schema: false
+    identifier: false
+  tables:
+  - name: "{{ var('DEST_STREAM_PREFIX') }}roles"
+  - name: "{{ var('DEST_STREAM_PREFIX') }}users"
+  - name: "{{ var('DEST_STREAM_PREFIX') }}time_entries"
+  - name: "{{ var('DEST_STREAM_PREFIX') }}time_entries_user"
+  - name: "{{ var('DEST_STREAM_PREFIX') }}time_entries_client"
+  - name: "{{ var('DEST_STREAM_PREFIX') }}time_entries_project"
+  - name: "{{ var('DEST_STREAM_PREFIX') }}time_entries_task"
