@@ -71,5 +71,4 @@ ON times._airbyte_airbyte_harvest_time_entries_hashid =
     ON users_2.id = users.id
     LEFT JOIN roles
     ON CAST(users_2.id as STRING) = roles.roles_flattened
-WHERE spent_date >= "2023-07-01"
 ORDER BY 1 ASC, 2 ASC
