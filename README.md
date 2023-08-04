@@ -1,4 +1,4 @@
-DBT project for App Metadata
+DBT project for Harvest
 
 ### Getting started
 
