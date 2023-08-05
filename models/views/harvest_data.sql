@@ -39,7 +39,7 @@ set time_entries_task_table_name = source(var('DATASET_ID'), var('DEST_STREAM_PR
     CROSS JOIN UNNEST(roles.user_ids) roles_flattened
     GROUP BY 1)
 
-SELECT spent_date                                  as spent_date
+SELECT spent_date                                  as date
      , users_2.name                                as name
      , users_2.id                                  as name_id
      , roles.name                                  as team_roles
@@ -54,6 +54,7 @@ SELECT spent_date                                  as spent_date
      , hours                                       as hours
      , billable                                    as billable
      , budgeted                                    as budgeted
+
 FROM {{ time_entries_table_name }} times
          LEFT JOIN {{ time_entries_user_table_name }} users_2
 ON times._airbyte_airbyte_harvest_time_entries_hashid =
